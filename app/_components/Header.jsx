@@ -1,6 +1,6 @@
 "use client"
 import { Button } from '@/components/ui/button'
-import { signIn, signOut, useSession } from 'next-auth/react'
+
 import Image from 'next/image'
 import React, { useEffect } from 'react'
 import {
@@ -15,11 +15,11 @@ import Link from 'next/link'
 
 function Header() {
 
-  const {data}=useSession();
+  // const {data}=useSession();
 
-  useEffect(()=>{
-    console.log(data);
-  },[data])
+  // useEffect(()=>{
+  //   console.log(data);
+  // },[data])
 
   return (
     <div className='p-5 shadow-sm flex  justify-between
@@ -41,16 +41,16 @@ function Header() {
            
         </div>
         <div>
-          {data?.user?
+          {/* {data?.user? */}
           
           <DropdownMenu>
   <DropdownMenuTrigger asChild>
-  <Image src={data?.user?.image}
+  {/* <Image src={data?.user?.image}
           alt='user'
           width={40}
           height={40}
           className='rounded-full'
-          />
+          /> */}
   </DropdownMenuTrigger>
   <DropdownMenuContent>
     <DropdownMenuLabel>My Account</DropdownMenuLabel>
@@ -65,9 +65,9 @@ function Header() {
 
           :  
 
-          <Button onClick={()=>signIn('descope')}>Login / Sign Up</Button>
+          <Button >Login / Sign Up</Button>
 
-        }
+        {/* } */}
             </div>
     </div>
   )
